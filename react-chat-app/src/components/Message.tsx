@@ -13,7 +13,7 @@ const MessageContainer = styled.div`
     color: white;
     border-radius: 12px;
     position: relative;
-    max-width: 500px; /* Mesaj kutusunun genişliğini sınırlandırma */
+    max-width: 500px;
 `;
 
 const ProfileImage = styled.img`
@@ -30,7 +30,7 @@ const MessageContent = styled.div`
 `;
 
 const MessageText = styled.div`
-    margin-bottom: 20px; /* İsim ve tarih-saat için yeterli alan bırakma */
+    margin-bottom: 20px;
 `;
 
 const UserNameAndTime = styled.div`
