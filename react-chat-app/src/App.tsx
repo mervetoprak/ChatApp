@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Chat from './components/Chat';
-import Login from './components/Login'; // Login bileşenini import ettik
+import Login from './components/Login';
 import './styles/globalStyles.ts';
 
 const App: React.FC = () => {
