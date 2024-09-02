@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# ChatApp
+## Proje Genel Bakış
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bu proje, React ve TypeScript kullanarak geliştirilmiş bir sohbet uygulamasıdır. Uygulama, kullanıcıların sohbet odalarına giriş yapmalarına, mesaj göndermelerine ve mesajlarını zenginleştirmelerine olanak tanır. Ayrıca, otomatik tamamlama ve görsel ekleme gibi özellikler içerir. Kullanıcılar `/select` komutunu kullanarak bir combo box'tan seçenekler seçebilir ve `/image [numara]` komutu ile rastgele görseller ekleyebilirler.
 
-## Available Scripts
+## Kurulum ve Çalıştırma Talimatları
 
-In the project directory, you can run:
+Projenizi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
-### `npm start`
+1. **Depoyu Klonlama:**
+   git clone https://github.com/mervetoprak/ChatApp
+   cd react-chat-application
+2. **Yükleme:**
+   npm install
+3. **Uygulamayı Başlatma:**
+  npm start
+4. **Testleri Çalıştırma:**
+npm test
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Önemli Tasarım Kararlarının ve Uzlaşmaların Açıklaması**
+Bileşen Yapısı: Projede her bileşen, belirli bir işlevi yerine getirecek şekilde tasarlanmıştır (örn. Chat, MessageInput, ComboBox).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Otomatik Tamamlama: MessageInput bileşeninde, kullanıcının yazdığı metne göre öneriler sunmak için bir hook olan useAutoComplete kullanılmıştır. Bu, kullanıcı deneyimini iyileştirmek için etkili bir yöntemdir.
 
-### `npm test`
+Görsel Ekleme: Mesajlarda /image [numara] komutunu işlemek için ChatMessage bileşeninde bir düzenleme yapılmıştır. Bu, mesajlara görsel eklemeyi basit ve kullanıcı dostu hale getirir.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Kullanılan Üçüncü Taraf Kütüphaneler**
+React: Kullanıcı arayüzünü oluşturmak için temel kütüphane.
+TypeScript: JavaScript üzerinde daha sağlam ve hata öncesi geliştirme imkanı tanır.
+Styled-components: CSS-in-JS çözümü olarak kullanılmıştır, bu da bileşenler için stil tanımlamalarını daha okunabilir hale getirir.
+React Testing Library: Bileşenlerin testlerini yazmak için kullanılmıştır, bu sayede uygulamanın kullanıcı etkileşimlerini test etmek daha kolay hale gelir.
 
-### `npm run build`
+**Karşılaşılan Zorluklar ve Bunların Üstesinden Nasıl Geldiğim**
+Otomatik Tamamlama Performansı: Önerilerin anında güncellenmesini sağlamak için performans optimizasyonları yapılmıştır. useAutoComplete hook'u, yazılan metne göre hızlı ve etkili bir şekilde öneri sunar.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Görsel Ekleme Komutu: /image [numara] komutunun doğru şekilde işlenmesini sağlamak için düzenli ifadeler kullanılmıştır. Bu, metin içindeki görsel komutlarını tespit etmek için etkili bir yöntemdir.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+socket.io kullanarak real time chat application olması için çabalandı. Ancak proje gecikti ve socket.io ile ilgili bilgisayarda kurulum kısmında eksiklikler ve çakışmalar olduğu için tamamlanamadı.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Daha Fazla Zamanım Olsaydı Gelecekteki İyileştirmeler İçin Fikirler**
+Gelişmiş Arama: Otomatik tamamlama işlevini daha da geliştirerek, arama sonuçlarını daha akıllı hale getirebilirdi. Örneğin, tam anlamıyla bir arama motoru entegre edilebilir.
 
-### `npm run eject`
+Kullanıcı Profili: Kullanıcıların profillerini oluşturup yönetebileceği bir özellik eklenebilirdi. Bu, sohbet deneyimini kişiselleştirmeye olanak tanır.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Real-Time Bildirimler: Sohbet uygulamasına gerçek zamanlı bildirimler eklemek, kullanıcı deneyimini artırabilirdi. Socket kullanarak mesajların anında gönderilmesini sağlayabilirdi.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Gelişmiş Görsel İşleme: Görsel yükleme ve önizleme işlevleri eklenerek kullanıcıların mesajlara görsel ekleme sürecini daha da iyileştirebilirsiniz.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Gelişmiş Testler: Uygulamanın farklı senaryolarını kapsayan daha kapsamlı testler yazılabilir. Bu, uygulamanın güvenilirliğini artırabilir.
