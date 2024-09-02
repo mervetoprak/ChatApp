@@ -8,7 +8,7 @@ Bu proje, React ve TypeScript kullanarak geliştirilmiş bir sohbet uygulamasıd
 Projenizi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 1. **Depoyu Klonlama:**
-   git clone https://github.com/kullanici_adiniz/react-chat-application.git
+   git clone https://github.com/mervetoprak/react-chat-application.git
    cd react-chat-application
 2. **Yükleme:**
    npm install
