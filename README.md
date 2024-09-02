@@ -18,6 +18,11 @@ Projenizi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyi
 npm test
 
 **Önemli Tasarım Kararlarının ve Uzlaşmaların Açıklaması**
+
+Durum Yönetimi: Projede React'in yerleşik kancaları olan useState ve useContext kullanılmıştır. useState kancası, bileşenlerin iç durumlarını yönetmek için kullanılırken, useContext kancası uygulama genelinde paylaşılabilir durumları yönetmek için tercih edilmiştir. Bu yaklaşım, durumu merkezi bir noktada yönetmeyi sağlar ve veri paylaşımını kolaylaştırır.
+
+Stil Yönetimi: Stil için styled-components kullanılmıştır. CSS-in-JS yaklaşımı, stilin bileşenlerle birlikte yönetilmesini sağlar. styled-components, stil ve işlevselliği bir arada tutarak bileşenlerin daha okunabilir ve bakımı kolay hale gelmesini sağlar. Ayrıca, dinamik stil tanımlamaları yapabilme özelliği sayesinde uygulamanın daha esnek olmasını sağlar.
+
 Bileşen Yapısı: Projede her bileşen, belirli bir işlevi yerine getirecek şekilde tasarlanmıştır (örn. Chat, MessageInput, ComboBox).
 
 Otomatik Tamamlama: MessageInput bileşeninde, kullanıcının yazdığı metne göre öneriler sunmak için bir hook olan useAutoComplete kullanılmıştır. Bu, kullanıcı deneyimini iyileştirmek için etkili bir yöntemdir.
@@ -29,6 +34,14 @@ React: Kullanıcı arayüzünü oluşturmak için temel kütüphane.
 TypeScript: JavaScript üzerinde daha sağlam ve hata öncesi geliştirme imkanı tanır.
 Styled-components: CSS-in-JS çözümü olarak kullanılmıştır, bu da bileşenler için stil tanımlamalarını daha okunabilir hale getirir.
 React Testing Library: Bileşenlerin testlerini yazmak için kullanılmıştır, bu sayede uygulamanın kullanıcı etkileşimlerini test etmek daha kolay hale gelir.
+
+**Dağıtım ve Sürüm Kontrolü**
+Uygulamanın deploy sürecinde Vercel kullanılmıştır:
+
+-Vercel Hesabı Oluşturuldu
+-New Project butonuna tıklanarak ve GitHub hesabı bağlandı.
+-Import Project seçeneği ile Git deposu seçildi.
+-Ayarlar kontrol edilerek deploy işlemi başlatıldı.
 
 **Karşılaşılan Zorluklar ve Bunların Üstesinden Nasıl Geldiğim**
 Otomatik Tamamlama Performansı: Önerilerin anında güncellenmesini sağlamak için performans optimizasyonları yapılmıştır. useAutoComplete hook'u, yazılan metne göre hızlı ve etkili bir şekilde öneri sunar.
