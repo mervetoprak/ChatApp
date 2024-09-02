@@ -19,7 +19,7 @@ const Option = styled.div`
 `;
 
 interface ComboBoxProps {
-    options: string[];  // options propunu ekliyoruz
+    options: string[];
     onSelect: (option: string) => void;
 }
 
